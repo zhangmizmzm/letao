@@ -27,4 +27,53 @@
       NProgress.done();
      },500)
     })
+
+
+    // 侧边栏
+    $(function(){
+      // //功能1- 高亮  遍历a标签，点击事件中先排他再添加active类名  或者直接给链接的页面加入active类名
+      // $('.category').each(function(index,ele){ 
+      //   $(ele).click(function(){
+      //     $('.category').removeClass('active');
+      //     $(ele).addClass('active');
+      //   })
+      // })
+
+      //功能2- 点击分类管理 二级导航栏展开切换
+      $('.nav .current').click(function(){
+        $(this).next().stop().slideToggle()
+      })
+      
+      // 侧边栏切换
+      $('.topbar .aside-toggle').click(function(){
+        $('.lt_aside').toggleClass('hidemenu');
+        $('.lt_main').toggleClass('hidemenu');
+        $('.topbar').toggleClass('hidemenu');
+      });
+
+      // 显示模态框
+      $('.out').click(function(){
+        $('#madalout').modal('show');
+      })
+     
+
+      // 退出功能
+      // ajax请求后台，返回信息若为true则退出了，清除了后台的登录标记
+      $('.back').click(function(){
+        $.ajax({
+          type: "get",
+        url: "/employee/employeeLogout",
+        // 如果后台在响应头中, 设置了 响应类型为 json 格式, 就可以省略 dataType
+        dataType: "json",
+        success:function(info){
+          if(info.success){//{"success":true}
+             // 退出成功, 跳转到登陆页
+             location.href = "login.html";
+          }
+        }
+        })
+      })
+      
+    })
+  
  

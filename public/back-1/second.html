@@ -37,8 +37,8 @@
         </a>
         <!-- 二级导航栏  是分类管理的兄弟标签 next() -->
         <div class="list">
-            <a href="first.html" ></a>一级分类</a>
-            <a href="second.html">二级分类</a>
+            <a href="first.html" >一级分类</a>
+            <a href="second.html" class="active">二级分类</a>
           </div>
       </li>
       <li>
@@ -58,16 +58,17 @@
     <div class="nav-src">
         <ol class="breadcrumb">
             <li><a href="index.html">管理系统</a></li>
+            <li>分类系统</li>
             <!-- 路径导航加入active 当前的不是链接-->
-            <li class="active">首页</li>
+            <li class="active">二级分类</li>
           </ol>
     </div>
     <div class="content">
-      <div class="echarts-left pull-left"></div>
-      <div class="echarts-right pull-left"></div>
+     
     </div>
   </div>
 </div>
+<!-- 模态框 -->
 <div id="madalout" class="modal fade">
   <!-- 蒙层 -->
     <div class="modal-dialog modal-sm">
@@ -103,8 +104,7 @@
   <!-- 引入jq 原因： bootstrap依赖于jq   pc端用bootstrap更方便，但是较移动端bootstrap体积较大（移动端慎用）-->
   <script src="./lib/jquery/jquery.min.js"></script>
   <script src="./lib/bootstrap/js/bootstrap.min.js"></script>
-  <!-- 引入echarts -->
-  <script src="./lib/echarts/echarts.min.js"></script>
+  
   <!-- 引入表单验证插件 -->
   <script src="./lib/bootstrap-validator/js/bootstrapValidator.js"></script>
   <!-- 引入进度条插件 -->
@@ -112,7 +112,7 @@
   <!-- 引入登录验证 -->
   <script src="./js/checkLogin.js"></script>
   <script src="./js/common.js"></script>
-  <script src="./js/index.js"></script>
+
   
 </body>
 </html>
