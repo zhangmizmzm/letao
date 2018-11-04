@@ -1,0 +1,52 @@
+/* 使用区域滚动, 容器需要添加定位 rerelative */
+
+.lt_category_left{
+  float: left;
+  position: relative;
+  width: 90px;
+  background: #E3E4E5;
+  height: 100%;
+}
+
+.lt_category_left li a{
+  display: block;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  color: #666;
+  border-bottom: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+}
+.lt_category_left li a.current{
+  background: #fff;
+  border-right: none;
+}
+.lt_category_left li:first-child a.current{
+  background: #fff;
+  border-right: none;
+}
+/* bfc特性布局  浮动+overflow: hidden;  但overflow: hidden的盒子不能设置w100%,会挤下去*/
+.lt_category_right{
+ overflow: hidden;
+  position: relative;
+  height:100% ;
+  background: #fff;
+  height: 100%;
+}
+.lt_category_right li{
+  float: left;
+  width: 33.3%;
+  text-align: center;
+}
+.lt_category_right li a{
+  display: block;
+}
+.lt_category_right li img{
+  width: 70px;
+  height: 50px;
+  margin: 0 auto;
+}
+.lt_main .lt_category_right  .nomore{
+  margin-top: 10px;
+  margin-left: 10px;
+}
