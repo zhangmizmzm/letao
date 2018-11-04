@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,74 +9,106 @@
   <link rel="stylesheet" href="./css/base.css">
   <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.css">
   <link rel="stylesheet" href="./lib/bootstrap-validator/css/bootstrapValidator.min.css">
-	<link rel="stylesheet" href="./lib/nprogress/nprogress.css">
-  
+  <link rel="stylesheet" href="./lib/nprogress/nprogress.css">
+
   <link rel="stylesheet" href="./css/comm.css">
 </head>
-<body>
- <!-- 首页无响应式版心，不需要container -->
 
-<!-- 侧边栏部分 -->
-<div class="lt_aside">
-  <div class="brand">
-    <a href="index.html">首页</a>
-  </div>
-  <div class="user">
-    <img src="./images/default.png" alt="">
-    <p>管理员</p>
-  </div>
-  <div class="nav">
-    <ul >
-      <li>
-        <a href="user.html" >
-          <p><i class="glyphicon glyphicon-user"></i> 用户管理</p>
-        </a>
-      </li>
-      <li>
-        <a href="javascript:;" class="current">
-          <p><i class="glyphicon glyphicon-list"></i>分类管理</p>          
-        </a>
-        <!-- 二级导航栏  是分类管理的兄弟标签 next() -->
-        <div class="list">
-            <a href="first.html" >一级分类</a>
+<body>
+  <!-- 首页无响应式版心，不需要container -->
+
+  <!-- 侧边栏部分 -->
+  <div class="lt_aside">
+    <div class="brand">
+      <a href="index.html">首页</a>
+    </div>
+    <div class="user">
+      <img src="./images/default.png" alt="">
+      <p>管理员</p>
+    </div>
+    <div class="nav">
+      <ul>
+        <li>
+          <a href="user.html">
+            <p>
+              <i class="glyphicon glyphicon-user"></i> 用户管理</p>
+          </a>
+        </li>
+        <li>
+          <a href="javascript:;" class="current">
+            <p>
+              <i class="glyphicon glyphicon-list"></i>分类管理</p>
+          </a>
+          <!-- 二级导航栏  是分类管理的兄弟标签 next() -->
+          <div class="list" style="display: block">
+            <a href="first.html">一级分类</a>
             <a href="second.html">二级分类</a>
           </div>
-      </li>
-      <li>
-        <a href="product.html" class="active">
-          <p><i class="glyphicon glyphicon-tags"></i> 商品管理</p>
+        </li>
+        <li>
+          <a href="product.html" class="active">
+            <p>
+              <i class="glyphicon glyphicon-tags"></i> 商品管理</p>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="lt_main">
+    <div class="general">
+      <div class="topbar">
+        <a href="javascript:;" class="pull-left aside-toggle">
+          <i class="glyphicon glyphicon-align-justify"></i>
         </a>
-      </li>
-    </ul>
-  </div>
-</div>
-<div class="lt_main">
-  <div class="general">
-    <div class="topbar">
-      <a href="javascript:;" class="pull-left aside-toggle"><i class="glyphicon glyphicon-align-justify"></i></a>
-      <a href="javascript:;" class="pull-right out"><i class="glyphicon glyphicon-log-out"></i></a>
-    </div>
-    <div class="nav-src">
+        <a href="javascript:;" class="pull-right out">
+          <i class="glyphicon glyphicon-log-out"></i>
+        </a>
+      </div>
+      <div class="nav-src">
         <ol class="breadcrumb">
-            <li><a href="index.html">管理系统</a></li>
-          
-            <!-- 路径导航加入active 当前的不是链接-->
-            <li class="active">商品管理</li>
-          </ol>
-    </div>
-    <div class="content">
-     
+          <li>
+            <a href="index.html">管理系统</a>
+          </li>
+
+          <!-- 路径导航加入active 当前的不是链接-->
+          <li class="active">商品管理</li>
+        </ol>
+      </div>
+      <div class="content">
+        <button class="btn btn-default mb-20" id="addProduct">添加商品</button>
+        <table class="table table-bordered table-hover second">
+          <thead>
+            <tr>
+              <th width="10%">序号</th>
+              <th width="30%">商品名称</th>
+              <th width="20%">商品描述</th>
+              <th width="10%">商品库存</th>
+              <th width="10%">商品尺寸</th>
+              <th width="10%">商品状态</th>
+              <th width="10%">操作</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- 模板引擎渲染 -->
+          </tbody>
+        </table>
+        <!-- 分页插件结构  bootstrap3.0 结构为ul-->
+        <div class="text-right">
+          <ul id="paginator"></ul>
+        </div>
+      </div>
     </div>
   </div>
-</div>
-<!-- 模态框 -->
-<div id="madalout" class="modal fade">
-  <!-- 蒙层 -->
+  <!-- 退出模态框 -->
+  <div id="madalout" class="modal fade">
+    <!-- 蒙层 -->
     <div class="modal-dialog modal-sm">
       <!-- 内容 -->
       <div class="modal-content">
         <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
           <h4 class="modal-title">温馨提示</h4>
         </div>
         <div class="modal-body">
@@ -85,34 +118,141 @@
           <button type="button" class="btn btn-default cancel" data-dismiss="modal">取消</button>
           <button type="button" class="btn btn-primary back">退出</button>
         </div>
-      </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
-  </div><!-- /.modal -->
+      </div>
+    </div>
+  </div>
+
+  <!-- 商品添加分类模态框 -->
+  <div id="product-catemodal" class="modal fade">
+    <!-- 蒙层 -->
+    <div class="modal-dialog">
+      <!-- 内容 -->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <h4 class="modal-title">添加商品</h4>
+        </div>
+        <!-- 提交的数据用form包裹 -->
+        <form id="form">
+        <div class="modal-body">
+          <!-- 表单校验必有form-group类名  表单提交数据必有name属性 -->
+          <div class="form-group">
+            <div class="dropdown">
+              <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+                <span id="dropText">请选择商品二级分类(品牌)</span>
+                <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu">
+                <!-- 动态渲染 -->
+              </ul>
+            </div>
+             <!-- 提交二级分类品牌的所属id   name=brandId-->
+             <input type="hidden" name="brandId" >
+             <input type="hidden" name="statu" value="1">
+          </div>
+          <div class="form-group">
+            <input type="text" name="proName" class="form-control"  placeholder="请输入商品名称">
+           
+          </div>
+          <div class="form-group">
+            <textarea name="proDesc" class="form-control" rows="3" placeholder="请输入商品描述"></textarea>
+        
+          </div>
+          <div class="form-group">
+            <input type="text" name="num" class="form-control"  placeholder="请输入商品库存">
+           
+          </div>
+          <div class="form-group">
+            <input type="text" name="size" class="form-control"  placeholder="请输入商品尺码">
+           
+          </div>
+          <div class="form-group">
+            <input type="text" name="price" class="form-control"  placeholder="请输入商品现价">
+         
+          </div>
+          <div class="form-group">
+            <input type="text" name="oldPrice" class="form-control"  placeholder="请输入商品原价">
+            
+          </div>
+          <!-- 图片上传  插件结构配置-->
+          <div class="form-group">
+              <label for="fileupload" class="btn btn-default">上传图片</label>
+              <input id="fileupload" type="file" name="pic1" data-url="/product/addProductPic" multiple style="display: none">
+          </div>
+          <div id="imgBox" class="form-group">
+            
+            <!-- 图片动态追加 -->
+            <input type="hidden" name="picStatus">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default cancel" data-dismiss="modal">取消</button>
+          <!-- submit表单提交必须在form中 submit不要注册事件-->
+          <button type="submit" class="btn btn-primary add-btn">添加</button>
+        </div>
+        </form>
+      </div>
+    </div>
+  </div>
 
 
 
 
+  <!-- 模板引擎 分页数据的渲染 -->
+  <script type="text/template" id="product-tmp">
+    {{each rows v i}}
+    <tr>
+      <td>{{(i+1)+(page-1)*size}}</td>
+      <td>{{v.proName}}</td>
+      <td>{{v.proDesc}}</td>
+      <td>{{v.num}}</td>
+      <td>{{v.size}}</td>
+      <td>{{v.statu===1?'已上架':'已下架'}}</td>
+      <td>
+        {{if v.statu===1}}
+        <button class="btn btn-danger">下架</button>
+        {{else}}
+        <button class="btn btn-success">上架</button>
+        {{/if}}
+      </td>
+    </tr>
+    {{/each}}
+  </script>
+
+
+  <!-- 模板引擎 下拉框内容的渲染 -->
+<script type="text/template" id="down">
+  {{each rows v i}}
+  <!-- 此处id是二级分类品牌对应的id  隐藏域对应name提交的是brandId数据 -->
+  <li><a data-id={{v.id}} href="javascript:;">{{v.brandName}}</a></li>
+  {{/each}}
+</script>
 
 
 
 
-
-
-
-
-  
   <!-- 引入jq 原因： bootstrap依赖于jq   pc端用bootstrap更方便，但是较移动端bootstrap体积较大（移动端慎用）-->
   <script src="./lib/jquery/jquery.min.js"></script>
   <script src="./lib/bootstrap/js/bootstrap.min.js"></script>
-
+  <!-- 引入模板引擎 -->
+  <script src="./lib/artTemplate/template-web.js"></script>
+  <!-- 引入分页插件 -->
+  <script src="./lib/bootstrap-paginator/bootstrap-paginator.min.js"></script>
   <!-- 引入表单验证插件 -->
   <script src="./lib/bootstrap-validator/js/bootstrapValidator.js"></script>
   <!-- 引入进度条插件 -->
   <script src="./lib/nprogress/nprogress.js"></script>
+  <!-- 引入文件上传插件 -->
+  <script src="./lib/jquery-fileupload/jquery.ui.widget.js"></script>
+  <script src="./lib/jquery-fileupload/jquery.fileupload.js"></script>
   <!-- 引入登录验证 -->
   <script src="./js/checkLogin.js"></script>
   <script src="./js/common.js"></script>
+  <script src="./js/product.js"></script>
 
-  
+
 </body>
+
 </html>

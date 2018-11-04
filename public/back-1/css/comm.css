@@ -166,4 +166,28 @@ html,body{
   height: 400px;
 }
 
+/* 添加分类按钮 */
+.mb-20{
+  margin-bottom: 20px;
+}
 
+/* 表格中的图片设置大小 */
+.content .second tbody img{
+  width: auto;
+  height: 50px;
+  margin: 0 auto;
+}
+
+/* 文件上传模态框  图片 */
+#second-catemodal img{
+  width: 100px;
+  height: 100px;
+  margin-top: 20px;
+}
+
+/* 商品管理添加模态框的图片 */
+#product-catemodal img{
+display: inline-block;
+width: 100px;
+height: 100px;
+}

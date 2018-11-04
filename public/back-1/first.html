@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,74 +9,101 @@
   <link rel="stylesheet" href="./css/base.css">
   <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.css">
   <link rel="stylesheet" href="./lib/bootstrap-validator/css/bootstrapValidator.min.css">
-	<link rel="stylesheet" href="./lib/nprogress/nprogress.css">
-  
+  <link rel="stylesheet" href="./lib/nprogress/nprogress.css">
+
   <link rel="stylesheet" href="./css/comm.css">
 </head>
-<body>
- <!-- 首页无响应式版心，不需要container -->
 
-<!-- 侧边栏部分 -->
-<div class="lt_aside">
-  <div class="brand">
-    <a href="index.html">首页</a>
-  </div>
-  <div class="user">
-    <img src="./images/default.png" alt="">
-    <p>管理员</p>
-  </div>
-  <div class="nav">
-    <ul >
-      <li>
-        <a href="user.html" >
-          <p><i class="glyphicon glyphicon-user"></i> 用户管理</p>
-        </a>
-      </li>
-      <li>
-        <a href="javascript:;" class="current">
-          <p><i class="glyphicon glyphicon-list"></i>分类管理</p>          
-        </a>
-        <!-- 二级导航栏  是分类管理的兄弟标签 next() -->
-        <div class="list">
+<body>
+  <!-- 首页无响应式版心，不需要container -->
+
+  <!-- 侧边栏部分 -->
+  <div class="lt_aside">
+    <div class="brand">
+      <a href="index.html">首页</a>
+    </div>
+    <div class="user">
+      <img src="./images/default.png" alt="">
+      <p>管理员</p>
+    </div>
+    <div class="nav">
+      <ul>
+        <li>
+          <a href="user.html">
+            <p>
+              <i class="glyphicon glyphicon-user"></i> 用户管理</p>
+          </a>
+        </li>
+        <li>
+          <a href="javascript:;" class="current">
+            <p>
+              <i class="glyphicon glyphicon-list"></i>分类管理</p>
+          </a>
+          <!-- 二级导航栏  是分类管理的兄弟标签 next() -->
+          <div class="list" style="display: block">
             <a href="first.html" class="active">一级分类</a>
             <a href="second.html">二级分类</a>
           </div>
-      </li>
-      <li>
-        <a href="product.html">
-          <p><i class="glyphicon glyphicon-tags"></i> 商品管理</p>
+        </li>
+        <li>
+          <a href="product.html">
+            <p>
+              <i class="glyphicon glyphicon-tags"></i> 商品管理</p>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="lt_main">
+    <div class="general">
+      <div class="topbar">
+        <a href="javascript:;" class="pull-left aside-toggle">
+          <i class="glyphicon glyphicon-align-justify"></i>
         </a>
-      </li>
-    </ul>
-  </div>
-</div>
-<div class="lt_main">
-  <div class="general">
-    <div class="topbar">
-      <a href="javascript:;" class="pull-left aside-toggle"><i class="glyphicon glyphicon-align-justify"></i></a>
-      <a href="javascript:;" class="pull-right out"><i class="glyphicon glyphicon-log-out"></i></a>
-    </div>
-    <div class="nav-src">
+        <a href="javascript:;" class="pull-right out">
+          <i class="glyphicon glyphicon-log-out"></i>
+        </a>
+      </div>
+      <div class="nav-src">
         <ol class="breadcrumb">
-            <li><a href="index.html">管理系统</a></li>
-            <li>管理系统</li>
-            <!-- 路径导航加入active 当前的不是链接-->
-            <li class="active">一级分类</li>
-          </ol>
-    </div>
-    <div class="content">
-     
+          <li>
+            <a href="index.html">管理系统</a>
+          </li>
+          <li class="active">分类管理</li>
+          <!-- 路径导航加入active 当前的不是链接-->
+          <li class="active">一级分类</li>
+        </ol>
+      </div>
+      <div class="content">
+        <button class="btn btn-default mb-20" id="addcate">添加分类</button>
+        <table class="table table-bordered table-hover">
+          <thead>
+            <tr>
+              <th width="20%">序号</th>
+              <th width="80%">一级分类名</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- 模板引擎渲染 -->
+          </tbody>
+        </table>
+        <!-- 分页插件结构 -->
+        <div class="text-right">
+          <ul id="paginator"></ul>
+        </div>
+      </div>
     </div>
   </div>
-</div>
-<!-- 模态框 -->
-<div id="madalout" class="modal fade">
-  <!-- 蒙层 -->
+  <!-- 退出模态框 -->
+  <div id="madalout" class="modal fade">
+    <!-- 蒙层 -->
     <div class="modal-dialog modal-sm">
       <!-- 内容 -->
       <div class="modal-content">
         <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
           <h4 class="modal-title">温馨提示</h4>
         </div>
         <div class="modal-body">
@@ -85,9 +113,55 @@
           <button type="button" class="btn btn-default cancel" data-dismiss="modal">取消</button>
           <button type="button" class="btn btn-primary back">退出</button>
         </div>
-      </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
-  </div><!-- /.modal -->
+      </div>
+      <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+  </div>
+  <!-- 一级添加分类模态框 -->
+  <div id="first-catemodal" class="modal fade">
+    <!-- 蒙层 -->
+    <div class="modal-dialog modal-sm">
+      <!-- 内容 -->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <h4 class="modal-title">添加分类</h4>
+        </div>
+        <form id="form">
+          <div class="modal-body">
+            <!-- 表单校验必有form-group类名  表单提交数据必有name属性 -->
+            <div class="form-group">
+              <!-- form表单提交数据 name对应value 提交了name即获取其value -->
+              <input type="text" name="categoryName" class="form-control" placeholder="请输入一级分类">
+            </div> 
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default cancel" data-dismiss="modal">取消</button>
+            <!-- submit表单提交必须在form中 -->
+            <button type="submit" class="btn btn-primary add-btn">添加</button>
+          </div>
+        </form>
+      </div>
+      <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+  </div>
+
+
+
+
+  <!-- 模板引擎 -->
+  <script type="text/html" id="first-tmp">
+    {{each rows v i}}
+    <tr>
+      <td>{{(i+1)+(page-1)*size}}</td>
+      <td>{{v.categoryName}}</td>
+    </tr>
+    {{/each}}
+  </script>
 
 
 
@@ -95,16 +169,13 @@
 
 
 
-
-
-
-
-
-  
   <!-- 引入jq 原因： bootstrap依赖于jq   pc端用bootstrap更方便，但是较移动端bootstrap体积较大（移动端慎用）-->
   <script src="./lib/jquery/jquery.min.js"></script>
   <script src="./lib/bootstrap/js/bootstrap.min.js"></script>
-  
+  <!-- 引入模板引擎 -->
+  <script src="./lib/artTemplate/template-web.js"></script>
+  <!-- 引入分页插件 -->
+  <script src="./lib/bootstrap-paginator/bootstrap-paginator.min.js"></script>
   <!-- 引入表单验证插件 -->
   <script src="./lib/bootstrap-validator/js/bootstrapValidator.js"></script>
   <!-- 引入进度条插件 -->
@@ -112,7 +183,9 @@
   <!-- 引入登录验证 -->
   <script src="./js/checkLogin.js"></script>
   <script src="./js/common.js"></script>
- 
-  
+  <script src="./js/first.js"></script>
+
+
 </body>
+
 </html>

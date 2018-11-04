@@ -118,14 +118,14 @@ $(function() {
 
   /*
   * 3. 重置功能完成
+  *    reset 按钮, 本身就可以重置表单内容
   * */
   $('[type="reset"]').click(function() {
     // 调用实例的方法, 重置校验状态和内容
     // resetForm 传true, 内容和校验状态都重置
     //           不传true, 只重置校验状态
-    $('#form').data("bootstrapValidator").resetForm(true);
+    $('#form').data("bootstrapValidator").resetForm();
   })
-
 
 
 })

@@ -151,7 +151,8 @@
   <script type="text/template" id="tmp">
     {{ each rows v i}}
     <tr>
-      <td>{{(i+1)}}</td>
+      <!-- 序号是增长的，前页的序号+（当前页码-1）* 每页条数 -->
+      <td>{{(i+1)+(page-1)*size}}</td>
       <td>{{v.username}}</td>
       <td>{{v.mobile}}</td>
       <td>{{ v.isDelete===0?'已禁用':'正常'}}</td>

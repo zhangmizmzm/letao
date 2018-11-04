@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/base.css">
+  <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.css">
+  <link rel="stylesheet" href="./lib/bootstrap-validator/css/bootstrapValidator.min.css">
+  <link rel="stylesheet" href="./lib/nprogress/nprogress.css">
+
+  <link rel="stylesheet" href="./css/comm.css">
+</head>
+
+<body>
+    <div class="dropdown">
+        <button id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown trigger
+          <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+          ...
+        </ul>
+      </div>
+
+  <!-- 引入jq 原因： bootstrap依赖于jq   pc端用bootstrap更方便，但是较移动端bootstrap体积较大（移动端慎用）-->
+  <script src="./lib/jquery/jquery.min.js"></script>
+  <script src="./lib/bootstrap/js/bootstrap.min.js"></script>
+  <!-- 引入模板引擎 -->
+  <script src="./lib/artTemplate/template-web.js"></script>
+  <!-- 引入分页插件 -->
+  <script src="./lib/bootstrap-paginator/bootstrap-paginator.min.js"></script>
+  <!-- 引入表单验证插件 -->
+  <script src="./lib/bootstrap-validator/js/bootstrapValidator.js"></script>
+  <!-- 引入进度条插件 -->
+  <script src="./lib/nprogress/nprogress.js"></script>
+  <!-- 引入登录验证 -->
+  <script src="./js/checkLogin.js"></script>
+  <script src="./js/common.js"></script>
+  <script src="./js/second.js"></script>
+
+
+</body>
+
+</html>
